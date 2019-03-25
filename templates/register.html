@@ -1,0 +1,33 @@
+﻿{% extends "base.html" %}
+ 
+{% block content %}
+    <br>
+    <h1>Регистрация</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username }}<br>
+            {% for error in form.username.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password }}<br>
+            {% for error in form.password.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <small>Оставляя данные на сайте, вы соглашаетесь с :</small><br>
+        <small>Политикой конфиденциальности</small><br>
+        <small>Защитой информации</small><br>
+        <a href="https://yandex.ru/images/search?pos=23&img_url=https%3A%2F%2Fs1.1zoom.ru%2Fb5050%2F503%2F406254-svetik_2880x1800.jpg&text=%D0%BA%D0%BE%D1%82%D0%B5%D0%BD%D0%BA%D0%B8&rpt=simage" class="badge badge-danger">Узнать подробнее</a>
+        <br><br><p>{{ form.submit(class_="btn btn-success") }}</p>
+    </form>
+    <br><input value="Назад к авторизации" type="button" class="btn btn-primary" onclick="location.href='/logout'" />
+{% endblock %}

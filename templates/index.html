@@ -1,0 +1,20 @@
+﻿{% extends "base.html" %}
+ 
+{% block content %}
+    <br>
+    <input value="Сотрировка книг по дате и алфавиту" type="button" class="btn btn-success" onclick="location.href='/sorting_data'" />
+    <br><br>
+    <input value="Добавить книгу" type="button" class="btn btn-success" onclick="location.href='/add_news'" />
+    <br><br>
+    {% for item in news %}
+        <div class="alert alert-secondary" role="alert">
+            <h2>{{item[1]}}</h2>
+            <h4>{{item[3]}}</h3>
+            <div>{{item[2]}}</div>
+            <br><a class="badge badge-info" style="font-size: 16px" href="/open_book/{{item[1]}}"><span data-lego="react"></span>Перейти к книге</a>
+            <br><br><input value="Удалить книгу" type="button" class="btn btn-danger" onclick="location.href='/delete_news/{{item[1]}}'"/>
+        </div>
+    {% endfor %}
+    <br><br>
+    <input value="Назад к авторизации" type="button" class="btn btn-primary" onclick="location.href='/logout'" />
+{% endblock %}

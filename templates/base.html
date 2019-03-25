@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{{title}}</title>
+    <style>
+      body {
+        background: url("/static/img/fonic11.jpg") 100% 100% no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    </style>
+</head>
+  <body>
+    <header>
+      <nav class="navbar navbar-light bg" style="opacity: 1">
+        <a class="navbar-brand" style="font-size: 35px; font-family: Lobster Regular;)" href="#">Локальная библиотека</a><br>
+        <a class="navbar-brand" style="font-size: 35px; color: yellow; font-family: Geneva;"  href="/logout">{{username}}</a>
+      </nav>
+    </header>
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+  </body>
+</html>

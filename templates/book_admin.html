@@ -1,0 +1,12 @@
+﻿{% extends "base.html" %}
+ 
+{% block content %}
+    <br>
+    <h1>{{book[0]}}</h1>
+    <div title="Нечего наводить на текст!!!" align="justify" class="alert alert-dark" role="alert">
+        {% for item in book[1] %}
+            <div>{{item}}</div>
+        {% endfor %}
+    </div>
+    <input value="Назад к книгам" class="btn btn-primary" type="button" onclick="location.href='/index_admin'" />
+{% endblock %}

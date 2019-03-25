@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+ 
+{% block content %}
+    <br>
+    <h1>Добавление книги</h1>
+    <div class="dropdown show">
+        <div class="dropdown-menu show">
+            <a class="dropdown-item active" href="/add_news">Текстовый документ</a>
+            <a class="dropdown-item" href="/add_news/text">Напечатать вручную</a>
+        </div>
+    </div><br><br><br><br>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title }}<br>
+            {% for error in form.title.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p> 
+            {{ form.file.label }}<br>
+            {{ form.file(class_="btn btn-success") }}<br>
+        </p>
+        <p>{{ form.submit(class_="btn btn-success") }}</p>
+    </form>
+{% endblock %}
